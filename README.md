@@ -1,0 +1,1 @@
+This is a website that will host the answers to the questions asked in the Yandex School of Interface Development application. It aims to use the latest interface technologies and techniques, in the hope that this will demonstrate a thorough understand of the subjects required to participate in the school program.
