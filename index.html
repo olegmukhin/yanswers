@@ -153,7 +153,8 @@ Car.prototype.toString = Car.prototype.getInfo = function() {
     return this.manufacturer + ' ' + this.model + ' ' + this.year;
 };
 Car.prototype.getDetailedInfo = function() {
-    return 'Производитель: ' + this.manufacturer + '. Модель: ' + this.model + '. Год: ' + this.year;
+    return 'Производитель: ' + this.manufacturer + '. Модель: ' + this.model + 
+		'. Год: ' + this.year;
 };
 
 var bmw = new Car("BMW", "X5", 2010),
@@ -327,7 +328,7 @@ __END__
 import argparse
 
 parser = argparse.ArgumentParser(description='Print the number of arguments.')
-parser.add_argument('arguments', metavar='ARG', type=str, nargs='*', help='some arguments')
+parser.add_argument('arguments', metavar='ARG', type=str, nargs='*', help='arguments')
 parser.add_argument('-m', dest='message', default='', help='custom message')
 parser.add_argument('-v', action='store_true', help='verbose mode')
 
