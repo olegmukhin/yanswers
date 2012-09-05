@@ -4,25 +4,22 @@ body {
     font-size: 13px;
 }
 header, article, footer, div {
-    width: 970px;
+    width: 670px;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
 }
 div {
-    width: 970px;
+    width: 670px;
     position: relative;
     margin: 0 auto;
 }
 article {
     display: inline-block;
-    width: 400px;
+    width: 630px;
     padding: 20px;
     margin: 10px;
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -khtml-border-radius: 20px;
-    border-radius: 20px;
+    -webkit-box-shadow: 3px 3px 7px #777;
 }
 article.info {
     background-color: rgb(114, 185, 201);
