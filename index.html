@@ -17,9 +17,9 @@
 <body>
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <header>
-		<h1 id="click">Yanswers: Ответы</h1>
+		<h1>Yanswers: Ответы</h1>
 		<h2>Oleg Mukhin</h2>
-		<button type="button">Filter facts</button>
+		<button type="button" id="click">Filter facts</button>
   </header>
   <div role="main">
 		<article class="qa">
@@ -63,7 +63,7 @@
 	<script src="../just-facts/justFacts.js"></script>
 	<script>
 	$('#click').click(function() { $('.fact').justFacts('toggle'); });
-	$('.fact').justFacts({classOnShow : 'testClass'});
+	$('.fact').justFacts(); //{classOnShow : 'testClass'}
 	</script>
 </body>
 </html>
