@@ -110,7 +110,7 @@
 			<h3>Задание для програмистов</h3>
 			<article class="code">
 				<h4 class="question">Javascript</h4>
-				<pre  class="brush: js">
+				<pre class="brush: js">
 					/**
 					 * Создает экземпляр Машины
 					 * @this {Car}
@@ -233,7 +233,7 @@
 			</article>
 			<article class="code">
 				<h4 class="question">Perl</h4>
-				<pre  class="brush: js">
+				<pre class="brush: perl; highlight: [9, 14, 21, 22, 23, 49];">
 					#!/usr/bin/env perl
 
 					use strict;
@@ -297,7 +297,7 @@
 			</article>
 			<article class="code">
 				<h4 class="question">Python</h4>
-				<pre  class="brush: js">
+				<pre class="brush: python; highlight: [8, 14, 15];">
 					#!/usr/bin/env python
 
 					import argparse
@@ -342,6 +342,10 @@
 	  'perl            js/SyntaxHighlighter/shBrushPerl.js',
 	  'python            js/SyntaxHighlighter/shBrushPython.js'
 	);
+	
+	SyntaxHighlighter.defaults['collapse'] = true;
+	SyntaxHighlighter.defaults['collapse'] = true;
+	
 	SyntaxHighlighter.all();
 	
 	$('#click').click(function() { $('.fact').justFacts('toggle'); });
