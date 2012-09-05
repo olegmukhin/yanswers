@@ -11,6 +11,8 @@
 
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/SyntaxHighlighter/shCore.css">
+	<link rel="stylesheet" href="css/SyntaxHighlighter/shThemeDjango.css">
   <link rel="stylesheet" href="css/print.css" media="print">
 
 </head>
@@ -107,8 +109,217 @@
 		<div>
 			<h3>Задание для програмистов</h3>
 			<article class="code">
-				<h4 class="question">Code</h4>
-				<p class="answer">answer</p>
+				<h4 class="question">Javascript</h4>
+				<pre  class="brush: js">
+					/**
+					 * Создает экземпляр Машины
+					 * @this {Car}
+					 * @param {string} manufacturer Производитель
+					 * @param {string} model Модель
+					 * @param {number} year Год производство
+					 */
+					function Car(manufacturer, model, year) {
+					    this.manufacturer = manufacturer;
+					    this.model = model;
+					    this.year = typeof year !== 'undefined' ? year : new Date().getFullYear();
+					}
+
+					Car.prototype.toString = Car.prototype.getInfo = function() {
+					    return this.manufacturer + ' ' + this.model + ' ' + this.year;
+					};
+					Car.prototype.getDetailedInfo = function() {
+					    return 'Производитель: ' + this.manufacturer + '. Модель: ' + this.model + '. Год: ' + this.year;
+					};
+
+					var bmw = new Car("BMW", "X5", 2010),
+					    audi = new Car("Audi", "Q5", 2012),
+					    toyota = new Car("Toyota", "Camry");
+
+					/**
+					 * Создает экземпляр Автосалона
+					 * @this {CarDealer}
+					 * @param {string} name Название автосалона
+					 */
+					function CarDealer(name) {
+					    this.name = name;
+					    this.cars = [];
+					}
+
+					var yandex = new CarDealer('Яндекс.Авто');
+
+					CarDealer.prototype.add = function() {
+					    for (var i = 0; i < arguments.length; i++) {
+					        this.cars.push(arguments[i]);
+					    }
+					    return this;
+					};
+
+					yandex
+					    .add(toyota)
+					    .add(bmw, audi);
+
+					/**
+					 * Установить цену на машину
+					 * @param {string} car идентификатор машины
+					 * @param {string} price стоимость
+					 */
+					// идентификатор машины составляется следующим образом "производитель модель год"
+					// стоимость машины может быть задана в двух валютах: йена и евро.
+					CarDealer.prototype.setPrice = function(car, price) {
+					    for(var i = 0; i < this.cars.length; i++) {
+					        if(this.cars[i].getInfo() == car) {
+					            this.cars[i].price = price;
+					        }
+					    }
+					    return this;
+					};
+
+					yandex
+					    .setPrice('BMW X5 2010', '€2000')
+					    .setPrice('Audi Q5 2012', '€3000')
+					    .setPrice('Toyota Camry 2012', '¥3000');
+
+					// @TODO: реализовать вывод списка автомобилей в продаже, с фильтрацией по стране
+					// производителю, используя метод getCountry:
+					Car.prototype.getCountry = function getCountry() {
+					    switch (this.manufacturer.toLowerCase()) {
+					        case 'bmw':
+						    case 'audi':
+					            return 'Germany';
+
+					        case 'toyota':
+					            return 'Japan';
+						}
+					}
+
+					CarDealer.prototype.list = function() {
+					    var all = [];
+					    for(var i = 0; i < this.cars.length; i++) {
+					        all.push(this.cars[i].getInfo());
+					    }
+					    return all.join(', ');
+					};
+					CarDealer.prototype.listByCountry = function(country) {
+					    var results = [];
+					    for(var i = 0; i < this.cars.length; i++) {
+					        if(this.cars[i].getCountry() == country) {
+					            results.push(this.cars[i].getInfo());
+					        }
+					    }
+					    return results.join(', ');
+					};
+
+					yandex.list(); //BMW X5 2010, Audi Q5 2012, Toyota Camry 2012
+					yandex.listByCountry('Germany'); //BMW X5 2010, Audi Q5 2012
+
+					CarDealer.prototype.listInRubles = function() {
+					    var all = [];
+					    for(var i = 0; i < this.cars.length; i++) {
+					        var info = this.cars[i].getInfo();
+					        if(this.cars[i].price !== 'undefined') {
+					            var price = this.cars[i].price;
+					            if(price.charAt(0) == '€') {
+					                var rubles = price.substr(1) * 39.7527;
+					            } else {
+					                var rubles = price.substr(1) * 40.3451;
+					            }
+					            info += ' ' + rubles.toFixed(2) + ' руб.';
+					        }
+					        all.push(info);
+					    }
+					    return all.join(', ');
+					};
+				</pre>
+			</article>
+			<article class="code">
+				<h4 class="question">Perl</h4>
+				<pre  class="brush: js">
+					#!/usr/bin/env perl
+
+					use strict;
+					use Getopt::Long;
+					use Pod::Usage;
+
+					my $help;
+					my $message = '';
+					my $v;
+
+					@ARGV and GetOptions(
+					    "h" => \$help,
+					    "m:s" => \$message,
+					    "v" => \$v,
+					) or pod2usage(1);
+					pod2usage(-verbose => 2, -exitval => 2) if $help;
+
+					my $count = 0;
+
+					foreach my $a (@ARGV) {
+					    if($v) {
+					        print($a . "\n");
+					    }
+					    $count++;
+					}
+
+					if($message ne "") {
+					    print($message . "\n");
+					}
+
+					print($count . "\n");
+
+					__END__
+
+					=head1 NAME
+
+					    printargs.pl - Print the number of arguments.
+
+					=head1 SYNOPSIS
+
+					    printargs.pl [options] [arguments]
+
+					=head1 OPTIONS
+
+					    -h      Show help message.
+
+					    -m MSG  Specify a custom message.
+
+					    -v      Verbose mode.
+
+					=head1 EXAMPLE
+
+					    printargs.pl a b c
+
+					    printargs.pl -m 'Arguments count: ' a b c
+
+					    printargs.pl -h
+
+					    printargs.pl -v a b c
+				</pre>
+			</article>
+			<article class="code">
+				<h4 class="question">Python</h4>
+				<pre  class="brush: js">
+					#!/usr/bin/env python
+
+					import argparse
+
+					parser = argparse.ArgumentParser(description='Print the number of arguments.')
+					parser.add_argument('arguments', metavar='ARG', type=str, nargs='*', help='some arguments')
+					parser.add_argument('-m', dest='message', default='', help='custom message')
+					parser.add_argument('-v', action='store_true', help='verbose mode')
+
+					args = parser.parse_args()
+					count = 0
+
+					for a in args.arguments:
+					    if args.v:
+					        print a
+					    count += 1
+
+					if args.message != '':
+					    print(args.message)
+
+					print(count)
+				</pre>
 			</article>
 		</div>
   </div>
@@ -120,8 +331,19 @@
 	</div>
   <script src="http://yandex.st/jquery/1.8.0/jquery.min.js"></script>
 	<script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
+	<script src="js/SyntaxHighlighter/shCore.js"></script>
+	<script src="js/SyntaxHighlighter/shAutoloader.js"></script>
 	<script src="../just-facts/justFacts.js"></script>
 	<script>
+	
+	SyntaxHighlighter.autoloader(
+	  'js jscript javascript  js/SyntaxHighlighter/shBrushJScript.js',
+	  'bash            js/SyntaxHighlighter/shBrushBash.js',
+	  'perl            js/SyntaxHighlighter/shBrushPerl.js',
+	  'python            js/SyntaxHighlighter/shBrushPython.js'
+	);
+	SyntaxHighlighter.all();
+	
 	$('#click').click(function() { $('.fact').justFacts('toggle'); });
 	$('.fact').justFacts(); //{classOnShow : 'testClass'}
 	
