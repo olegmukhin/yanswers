@@ -8,15 +8,20 @@ header, article, footer {
     margin-right: auto;
     text-align: left;
 }
-article.qa {
+article {
     width: 930px;
     padding: 20px;
     margin: 10px auto;
-    background-color: #BBB;
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     -khtml-border-radius: 20px;
     border-radius: 20px;
+}
+article.qa {
+    background-color: rgb(164, 209, 205);
+}
+article.info {
+    background-color: rgb(114, 185, 201);
 }
 h4 {
     margin: 0;
