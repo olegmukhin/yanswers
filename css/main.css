@@ -1,28 +1,42 @@
 body {
     text-align: center;
     font-family: 'Helvetica Neue', Helvetica;
+    font-size: 13px;
 }
-header, article, footer {
+header, article, footer, div {
     width: 970px;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
 }
+div {
+    width: 970px;
+    position: relative;
+    margin: 0 auto;
+}
 article {
-    width: 930px;
+    display: inline-block;
+    width: 400px;
     padding: 20px;
-    margin: 10px auto;
+    margin: 10px;
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     -khtml-border-radius: 20px;
     border-radius: 20px;
 }
-article.qa {
-    background-color: rgb(164, 209, 205);
-}
 article.info {
     background-color: rgb(114, 185, 201);
 }
+article.qa {
+    background-color: rgb(164, 209, 205);
+}
+article.code {
+    background-color: rgb(183, 214, 174);
+}
+h1, h2 {
+    
+}
 h4 {
     margin: 0;
+    font-size: 15px;
 }
