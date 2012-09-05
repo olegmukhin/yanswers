@@ -1,24 +1,25 @@
 body {
     text-align: center;
-    font-family: 'Helvetica Neue', Helvetica;
+    font-family: Helvetica;
     font-size: 13px;
 }
-header, article, footer, div {
-    width: 670px;
+header, footer, div[role="main"] {
+    width: 970px;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
 }
-div {
-    width: 670px;
-    position: relative;
+footer {
+    clear: both;
+}
+div[role="main"] {
     margin: 0 auto;
 }
 article {
     display: inline-block;
-    width: 630px;
-    padding: 20px;
-    margin: 10px;
+    width: 650px;
+    padding: 20px 20px 10px 20px;
+    margin: 10px 0;
     -webkit-box-shadow: 3px 3px 7px #777;
 }
 article.info {
@@ -36,4 +37,33 @@ h1, h2 {
 h4 {
     margin: 0;
     font-size: 15px;
+}
+div#menu {
+    height: 300px;
+    width: 250px;
+    float: left;
+    margin-top: 58px;
+}
+div.content {
+    width: 690px;
+    float: right;
+}
+pre {
+    width: 650px;
+    font-size: 12px;
+}
+.fact-active {
+    display: inline-block;
+    max-width: 285px;
+    padding: 10px;
+    margin: 0 10px 10px 0;
+    background-color: rgb(247, 185, 114);
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -khtml-border-radius: 7px;
+    border-radius: 7px;
+    -webkit-box-shadow: 2px 2px 4px #777;
+}
+#facts_button, #facts_label {
+    display: none;
 }
