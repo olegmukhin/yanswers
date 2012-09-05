@@ -45,15 +45,15 @@
 				</article>
 				<article class="info">
 					<h4 class="question">Е-mail</h4>
-					<p class="answer"><span class="fact"></span></p>
+					<p class="answer">me@me.com<span class="fact"></span></p>
 				</article>
 				<article class="info">
 					<h4 class="question">Телефон</h4>
-					<p class="answer"><span class="fact"></span></p>
+					<p class="answer">+7 (XXX) XX-XX-XX<span class="fact"></span></p>
 				</article>
 				<article class="info">
 					<h4 class="question">Год рождения</h4>
-					<p class="answer"><span class="fact"></span></p>
+					<p class="answer">XXXX<span class="fact"></span></p>
 				</article>
 				<article class="info">
 					<h4 class="question">Город, в котором живёте</h4>
@@ -135,7 +135,7 @@
 				<h3><a name="programming">Задание для програмистов</a></h3>
 				<article class="code">
 					<h4 class="question">Javascript</h4>
-					<pre class="brush: js">
+					<pre class="brush: js;  highlight: [11, 14, 15, 16, 17, 18, 19, 37, 38, 39, 40, 41, 42, 55, 56, 57, 58, 59, 60, 61, 62, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 80, 81,82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117];">
 /**
  * Создает экземпляр Машины
  * @this {Car}
@@ -204,11 +204,9 @@ yandex
     .setPrice('Audi Q5 2012', '€3000')
     .setPrice('Toyota Camry 2012', '¥3000');
 
-// @TODO: реализовать вывод списка автомобилей в продаже, с фильтрацией по стране
-// производителю, используя метод getCountry:
 Car.prototype.getCountry = function getCountry() {
     switch (this.manufacturer.toLowerCase()) {
-        case 'bmw':
+      case 'bmw':
 	    case 'audi':
             return 'Germany';
 
@@ -237,6 +235,7 @@ CarDealer.prototype.listByCountry = function(country) {
 yandex.list(); //BMW X5 2010, Audi Q5 2012, Toyota Camry 2012
 yandex.listByCountry('Germany'); //BMW X5 2010, Audi Q5 2012
 
+// В будущем можно использовать http://cbr.ru/scripts/XML_daily.asp
 CarDealer.prototype.listInRubles = function() {
     var all = [];
     for(var i = 0; i < this.cars.length; i++) {
