@@ -21,314 +21,320 @@
   <header>
 		<h1>Yanswers: Ответы</h1>
 		<h2>Oleg Mukhin</h2>
-		<button type="button" id="click">Filter facts</button>
   </header>
   <div role="main">
-		<div>
-			<h3>Общие вопросы</h3>
-			<article class="info">
-				<h4 class="question">Фамилия, имя, отчество</h4>
-				<p class="answer">Мухин Олег Владимирович</p>
-			</article>
-			<article class="info">
-				<h4 class="question">Е-mail</h4>
-				<p class="answer"></p>
-			</article>
-			<article class="info">
-				<h4 class="question">Телефон</h4>
-				<p class="answer"></p>
-			</article>
-			<article class="info">
-				<h4 class="question">Год рождения</h4>
-				<p class="answer"></p>
-			</article>
-			<article class="info">
-				<h4 class="question">Город, в котором живёте</h4>
-				<p class="answer">Москва</p>
-			</article>
-			<article class="info">
-				<h4 class="question">Вуз, факультет, специальность, кафедра</h4>
-				<p class="answer"></p>
-			</article>
-			<article class="info">
-				<h4 class="question">Год окончания вуза</h4>
-				<p class="answer"></p>
-			</article>
-			<article class="info">
-				<h4 class="question">На каком уровне владеете английским языком?</h4>
-				<p class="answer"></p>
-			</article>
-			<article class="info">
-				<h4 class="question">Чего вы ожидаете от участия в Школе?</h4>
-				<p class="answer"></p>
-			</article>
-			<article class="info">
-				<h4 class="question">Откуда вы о нас узнали?</h4>
-				<p class="answer"></p>
-			</article>
-			<article class="info">
-				<h4 class="question">Сколько времени вы были бы готовы уделять стажировке или работе в Яндексе?</h4>
-				<p class="answer"></p>
-			</article>
+		<div id="menu">
+			<nav>
+				<a href="#info">Общие вопросы</a><br>
+				<a href="#experience">Опыт разработки</a><br>
+				<a href="#programming">Задание для програмистов</a><br>
+				<button type="button" id="click">Filter facts</button>
+			</nav>
 		</div>
-		<div>
-			<h3>Опыт разработки</h3>
-			<article class="qa">
-				<h4 class="question">Расскажите нам о вашем опыте разработки. Ничего не упускайте: это может быть как серьезный интерфейс, так и просто домашняя страничка.</h4>
-				<p class="answer">IBM – WYSIWYG, AR App, сайты – freshmilk, </p>
-			</article>
-			<article class="qa">
-				<h4 class="question">Какие языки программирования, фреймворки и технологии вы использовали? Сложились ли у вас личные предпочтения?</h4>
-				<p class="answer">Изночально, я использовал исключительно LAMP для разработки вэб</p>
-			</article>
-			<article class="qa">
-				<h4 class="question">Какие редакторы и среды разработки вы использовали? Чем обычно пользуетесь?</h4>
-				<p class="answer">Началось все со скромного <span class="fact">Notepad</span>, потом появился <span class="fact">Notepad++</span>, а с самого начала университетского обучения, я был ознакомлен с <span class="fact">Netbeans</span> и <span class="fact">Eclipse</span>. В последние время я был очарован простатой и функционалом <span class="fact">Textmate</span>, с его подержкой большинства языков и хорошей интеграцией с Git. При изучения Objective C, в течение последних двух месяцов, конечно использовал <span class="fact">Xcode</span>.</p>
-			</article>
-			<article class="qa">
-				<h4 class="question">С какими ОС приходилось сталкиваться? Для каких целей вы их использовали?</h4>
-				<p class="answer">Windows XP Vista 7 Ubuntu (с Feisty Fawn) Fedora Mac OSX</p>
-			</article>
-			<article class="qa">
-				<h4 class="question">Приходилось ли вам пользоваться системами контроля версий? Если да, то какими? Какая из них вам нравится больше всего?</h4>
-				<p class="answer">Subversion Github</p>
-			</article>
-			<article class="qa">
-				<h4 class="question">Использовали ли вы системы постановки и ведения задач?</h4>
-				<p class="answer">Trac (http://trac.edgewall.org/)</p>
-			</article>
-			<article class="qa">
-				<h4 class="question">Какие полезные для фронтенд-разработчика ресурсы вы используете и можете посоветовать?</h4>
-				<p class="answer">http://browsershots.org/ Google Anlytics </p>
-			</article>
-			<article class="qa">
-				<h4 class="question">Работали ли вы где-нибудь? Какие у вас были должностные обязанности? Есть ли опыт работы в команде?</h4>
-				<p class="answer">IBM, IP Agency, University</p>
-			</article>
-		</div>
-		<div>
-			<h3>Задание для програмистов</h3>
-			<article class="code">
-				<h4 class="question">Javascript</h4>
-				<pre class="brush: js">
-					/**
-					 * Создает экземпляр Машины
-					 * @this {Car}
-					 * @param {string} manufacturer Производитель
-					 * @param {string} model Модель
-					 * @param {number} year Год производство
-					 */
-					function Car(manufacturer, model, year) {
-					    this.manufacturer = manufacturer;
-					    this.model = model;
-					    this.year = typeof year !== 'undefined' ? year : new Date().getFullYear();
-					}
-
-					Car.prototype.toString = Car.prototype.getInfo = function() {
-					    return this.manufacturer + ' ' + this.model + ' ' + this.year;
-					};
-					Car.prototype.getDetailedInfo = function() {
-					    return 'Производитель: ' + this.manufacturer + '. Модель: ' + this.model + '. Год: ' + this.year;
-					};
-
-					var bmw = new Car("BMW", "X5", 2010),
-					    audi = new Car("Audi", "Q5", 2012),
-					    toyota = new Car("Toyota", "Camry");
-
-					/**
-					 * Создает экземпляр Автосалона
-					 * @this {CarDealer}
-					 * @param {string} name Название автосалона
-					 */
-					function CarDealer(name) {
-					    this.name = name;
-					    this.cars = [];
-					}
-
-					var yandex = new CarDealer('Яндекс.Авто');
-
-					CarDealer.prototype.add = function() {
-					    for (var i = 0; i < arguments.length; i++) {
-					        this.cars.push(arguments[i]);
-					    }
-					    return this;
-					};
-
-					yandex
-					    .add(toyota)
-					    .add(bmw, audi);
-
-					/**
-					 * Установить цену на машину
-					 * @param {string} car идентификатор машины
-					 * @param {string} price стоимость
-					 */
-					// идентификатор машины составляется следующим образом "производитель модель год"
-					// стоимость машины может быть задана в двух валютах: йена и евро.
-					CarDealer.prototype.setPrice = function(car, price) {
-					    for(var i = 0; i < this.cars.length; i++) {
-					        if(this.cars[i].getInfo() == car) {
-					            this.cars[i].price = price;
-					        }
-					    }
-					    return this;
-					};
-
-					yandex
-					    .setPrice('BMW X5 2010', '€2000')
-					    .setPrice('Audi Q5 2012', '€3000')
-					    .setPrice('Toyota Camry 2012', '¥3000');
-
-					// @TODO: реализовать вывод списка автомобилей в продаже, с фильтрацией по стране
-					// производителю, используя метод getCountry:
-					Car.prototype.getCountry = function getCountry() {
-					    switch (this.manufacturer.toLowerCase()) {
-					        case 'bmw':
-						    case 'audi':
-					            return 'Germany';
-
-					        case 'toyota':
-					            return 'Japan';
+		<div class="content">
+			<div>
+				<h3><a name="info">Общие вопросы</a></h3>
+				<article class="info">
+					<h4 class="question">Фамилия, имя, отчество</h4>
+					<p class="answer">Мухин Олег Владимирович</p>
+				</article>
+				<article class="info">
+					<h4 class="question">Е-mail</h4>
+					<p class="answer"></p>
+				</article>
+				<article class="info">
+					<h4 class="question">Телефон</h4>
+					<p class="answer"></p>
+				</article>
+				<article class="info">
+					<h4 class="question">Год рождения</h4>
+					<p class="answer"></p>
+				</article>
+				<article class="info">
+					<h4 class="question">Город, в котором живёте</h4>
+					<p class="answer">Москва</p>
+				</article>
+				<article class="info">
+					<h4 class="question">Вуз, факультет, специальность, кафедра</h4>
+					<p class="answer"></p>
+				</article>
+				<article class="info">
+					<h4 class="question">Год окончания вуза</h4>
+					<p class="answer"></p>
+				</article>
+				<article class="info">
+					<h4 class="question">На каком уровне владеете английским языком?</h4>
+					<p class="answer"></p>
+				</article>
+				<article class="info">
+					<h4 class="question">Чего вы ожидаете от участия в Школе?</h4>
+					<p class="answer"></p>
+				</article>
+				<article class="info">
+					<h4 class="question">Откуда вы о нас узнали?</h4>
+					<p class="answer"></p>
+				</article>
+				<article class="info">
+					<h4 class="question">Сколько времени вы были бы готовы уделять стажировке или работе в Яндексе?</h4>
+					<p class="answer"></p>
+				</article>
+			</div>
+			<div>
+				<h3><a name="experience">Опыт разработки</a></h3>
+				<article class="qa">
+					<h4 class="question">Расскажите нам о вашем опыте разработки. Ничего не упускайте: это может быть как серьезный интерфейс, так и просто домашняя страничка.</h4>
+					<p class="answer">IBM – WYSIWYG, AR App, сайты – freshmilk, </p>
+				</article>
+				<article class="qa">
+					<h4 class="question">Какие языки программирования, фреймворки и технологии вы использовали? Сложились ли у вас личные предпочтения?</h4>
+					<p class="answer">Изночально, я использовал исключительно LAMP для разработки вэб</p>
+				</article>
+				<article class="qa">
+					<h4 class="question">Какие редакторы и среды разработки вы использовали? Чем обычно пользуетесь?</h4>
+					<p class="answer">Началось все со скромного <span class="fact">Notepad</span>, потом появился <span class="fact">Notepad++</span>, а с самого начала университетского обучения, я был ознакомлен с <span class="fact">Netbeans</span> и <span class="fact">Eclipse</span>. В последние время я был очарован простотой и функционалом <span class="fact">Textmate</span>, с его поддержкой большинства языков и хорошей интеграцией с Git. При изучения Objective C, в течение последних двух месяцев, конечно использовал <span class="fact">Xcode</span>.</p>
+				</article>
+				<article class="qa">
+					<h4 class="question">С какими ОС приходилось сталкиваться? Для каких целей вы их использовали?</h4>
+					<p class="answer">Windows XP Vista 7 Ubuntu (с Feisty Fawn) Fedora Mac OSX</p>
+				</article>
+				<article class="qa">
+					<h4 class="question">Приходилось ли вам пользоваться системами контроля версий? Если да, то какими? Какая из них вам нравится больше всего?</h4>
+					<p class="answer">Subversion Github</p>
+				</article>
+				<article class="qa">
+					<h4 class="question">Использовали ли вы системы постановки и ведения задач?</h4>
+					<p class="answer">Trac (http://trac.edgewall.org/)</p>
+				</article>
+				<article class="qa">
+					<h4 class="question">Какие полезные для фронтенд-разработчика ресурсы вы используете и можете посоветовать?</h4>
+					<p class="answer">http://browsershots.org/ Google Anlytics </p>
+				</article>
+				<article class="qa">
+					<h4 class="question">Работали ли вы где-нибудь? Какие у вас были должностные обязанности? Есть ли опыт работы в команде?</h4>
+					<p class="answer">IBM, IP Agency, University</p>
+				</article>
+			</div>
+			<div>
+				<h3><a name="programming">Задание для програмистов</a></h3>
+				<article class="code">
+					<h4 class="question">Javascript</h4>
+					<pre class="brush: js">
+						/**
+						 * Создает экземпляр Машины
+						 * @this {Car}
+						 * @param {string} manufacturer Производитель
+						 * @param {string} model Модель
+						 * @param {number} year Год производство
+						 */
+						function Car(manufacturer, model, year) {
+						    this.manufacturer = manufacturer;
+						    this.model = model;
+						    this.year = typeof year !== 'undefined' ? year : new Date().getFullYear();
 						}
-					}
 
-					CarDealer.prototype.list = function() {
-					    var all = [];
-					    for(var i = 0; i < this.cars.length; i++) {
-					        all.push(this.cars[i].getInfo());
-					    }
-					    return all.join(', ');
-					};
-					CarDealer.prototype.listByCountry = function(country) {
-					    var results = [];
-					    for(var i = 0; i < this.cars.length; i++) {
-					        if(this.cars[i].getCountry() == country) {
-					            results.push(this.cars[i].getInfo());
-					        }
-					    }
-					    return results.join(', ');
-					};
+						Car.prototype.toString = Car.prototype.getInfo = function() {
+						    return this.manufacturer + ' ' + this.model + ' ' + this.year;
+						};
+						Car.prototype.getDetailedInfo = function() {
+						    return 'Производитель: ' + this.manufacturer + '. Модель: ' + this.model + '. Год: ' + this.year;
+						};
 
-					yandex.list(); //BMW X5 2010, Audi Q5 2012, Toyota Camry 2012
-					yandex.listByCountry('Germany'); //BMW X5 2010, Audi Q5 2012
+						var bmw = new Car("BMW", "X5", 2010),
+						    audi = new Car("Audi", "Q5", 2012),
+						    toyota = new Car("Toyota", "Camry");
 
-					CarDealer.prototype.listInRubles = function() {
-					    var all = [];
-					    for(var i = 0; i < this.cars.length; i++) {
-					        var info = this.cars[i].getInfo();
-					        if(this.cars[i].price !== 'undefined') {
-					            var price = this.cars[i].price;
-					            if(price.charAt(0) == '€') {
-					                var rubles = price.substr(1) * 39.7527;
-					            } else {
-					                var rubles = price.substr(1) * 40.3451;
-					            }
-					            info += ' ' + rubles.toFixed(2) + ' руб.';
-					        }
-					        all.push(info);
-					    }
-					    return all.join(', ');
-					};
-				</pre>
-			</article>
-			<article class="code">
-				<h4 class="question">Perl</h4>
-				<pre class="brush: perl; highlight: [9, 14, 21, 22, 23, 49];">
-					#!/usr/bin/env perl
+						/**
+						 * Создает экземпляр Автосалона
+						 * @this {CarDealer}
+						 * @param {string} name Название автосалона
+						 */
+						function CarDealer(name) {
+						    this.name = name;
+						    this.cars = [];
+						}
 
-					use strict;
-					use Getopt::Long;
-					use Pod::Usage;
+						var yandex = new CarDealer('Яндекс.Авто');
 
-					my $help;
-					my $message = '';
-					my $v;
+						CarDealer.prototype.add = function() {
+						    for (var i = 0; i < arguments.length; i++) {
+						        this.cars.push(arguments[i]);
+						    }
+						    return this;
+						};
 
-					@ARGV and GetOptions(
-					    "h" => \$help,
-					    "m:s" => \$message,
-					    "v" => \$v,
-					) or pod2usage(1);
-					pod2usage(-verbose => 2, -exitval => 2) if $help;
+						yandex
+						    .add(toyota)
+						    .add(bmw, audi);
 
-					my $count = 0;
+						/**
+						 * Установить цену на машину
+						 * @param {string} car идентификатор машины
+						 * @param {string} price стоимость
+						 */
+						// идентификатор машины составляется следующим образом "производитель модель год"
+						// стоимость машины может быть задана в двух валютах: йена и евро.
+						CarDealer.prototype.setPrice = function(car, price) {
+						    for(var i = 0; i < this.cars.length; i++) {
+						        if(this.cars[i].getInfo() == car) {
+						            this.cars[i].price = price;
+						        }
+						    }
+						    return this;
+						};
 
-					foreach my $a (@ARGV) {
-					    if($v) {
-					        print($a . "\n");
-					    }
-					    $count++;
-					}
+						yandex
+						    .setPrice('BMW X5 2010', '€2000')
+						    .setPrice('Audi Q5 2012', '€3000')
+						    .setPrice('Toyota Camry 2012', '¥3000');
 
-					if($message ne "") {
-					    print($message . "\n");
-					}
+						// @TODO: реализовать вывод списка автомобилей в продаже, с фильтрацией по стране
+						// производителю, используя метод getCountry:
+						Car.prototype.getCountry = function getCountry() {
+						    switch (this.manufacturer.toLowerCase()) {
+						        case 'bmw':
+							    case 'audi':
+						            return 'Germany';
 
-					print($count . "\n");
+						        case 'toyota':
+						            return 'Japan';
+							}
+						}
 
-					__END__
+						CarDealer.prototype.list = function() {
+						    var all = [];
+						    for(var i = 0; i < this.cars.length; i++) {
+						        all.push(this.cars[i].getInfo());
+						    }
+						    return all.join(', ');
+						};
+						CarDealer.prototype.listByCountry = function(country) {
+						    var results = [];
+						    for(var i = 0; i < this.cars.length; i++) {
+						        if(this.cars[i].getCountry() == country) {
+						            results.push(this.cars[i].getInfo());
+						        }
+						    }
+						    return results.join(', ');
+						};
 
-					=head1 NAME
+						yandex.list(); //BMW X5 2010, Audi Q5 2012, Toyota Camry 2012
+						yandex.listByCountry('Germany'); //BMW X5 2010, Audi Q5 2012
 
-					    printargs.pl - Print the number of arguments.
+						CarDealer.prototype.listInRubles = function() {
+						    var all = [];
+						    for(var i = 0; i < this.cars.length; i++) {
+						        var info = this.cars[i].getInfo();
+						        if(this.cars[i].price !== 'undefined') {
+						            var price = this.cars[i].price;
+						            if(price.charAt(0) == '€') {
+						                var rubles = price.substr(1) * 39.7527;
+						            } else {
+						                var rubles = price.substr(1) * 40.3451;
+						            }
+						            info += ' ' + rubles.toFixed(2) + ' руб.';
+						        }
+						        all.push(info);
+						    }
+						    return all.join(', ');
+						};
+					</pre>
+				</article>
+				<article class="code">
+					<h4 class="question">Perl</h4>
+					<pre class="brush: perl; highlight: [9, 14, 21, 22, 23, 49];">
+						#!/usr/bin/env perl
 
-					=head1 SYNOPSIS
+						use strict;
+						use Getopt::Long;
+						use Pod::Usage;
 
-					    printargs.pl [options] [arguments]
+						my $help;
+						my $message = '';
+						my $v;
 
-					=head1 OPTIONS
+						@ARGV and GetOptions(
+						    "h" => \$help,
+						    "m:s" => \$message,
+						    "v" => \$v,
+						) or pod2usage(1);
+						pod2usage(-verbose => 2, -exitval => 2) if $help;
 
-					    -h      Show help message.
+						my $count = 0;
 
-					    -m MSG  Specify a custom message.
+						foreach my $a (@ARGV) {
+						    if($v) {
+						        print($a . "\n");
+						    }
+						    $count++;
+						}
 
-					    -v      Verbose mode.
+						if($message ne "") {
+						    print($message . "\n");
+						}
 
-					=head1 EXAMPLE
+						print($count . "\n");
 
-					    printargs.pl a b c
+						__END__
 
-					    printargs.pl -m 'Arguments count: ' a b c
+						=head1 NAME
 
-					    printargs.pl -h
+						    printargs.pl - Print the number of arguments.
 
-					    printargs.pl -v a b c
-				</pre>
-			</article>
-			<article class="code">
-				<h4 class="question">Python</h4>
-				<pre class="brush: python; highlight: [8, 14, 15];">
-					#!/usr/bin/env python
+						=head1 SYNOPSIS
 
-					import argparse
+						    printargs.pl [options] [arguments]
 
-					parser = argparse.ArgumentParser(description='Print the number of arguments.')
-					parser.add_argument('arguments', metavar='ARG', type=str, nargs='*', help='some arguments')
-					parser.add_argument('-m', dest='message', default='', help='custom message')
-					parser.add_argument('-v', action='store_true', help='verbose mode')
+						=head1 OPTIONS
 
-					args = parser.parse_args()
-					count = 0
+						    -h      Show help message.
 
-					for a in args.arguments:
-					    if args.v:
-					        print a
-					    count += 1
+						    -m MSG  Specify a custom message.
 
-					if args.message != '':
-					    print(args.message)
+						    -v      Verbose mode.
 
-					print(count)
-				</pre>
-			</article>
+						=head1 EXAMPLE
+
+						    printargs.pl a b c
+
+						    printargs.pl -m 'Arguments count: ' a b c
+
+						    printargs.pl -h
+
+						    printargs.pl -v a b c
+					</pre>
+				</article>
+				<article class="code">
+					<h4 class="question">Python</h4>
+					<pre class="brush: python; highlight: [8, 14, 15];">
+						#!/usr/bin/env python
+
+						import argparse
+
+						parser = argparse.ArgumentParser(description='Print the number of arguments.')
+						parser.add_argument('arguments', metavar='ARG', type=str, nargs='*', help='some arguments')
+						parser.add_argument('-m', dest='message', default='', help='custom message')
+						parser.add_argument('-v', action='store_true', help='verbose mode')
+
+						args = parser.parse_args()
+						count = 0
+
+						for a in args.arguments:
+						    if args.v:
+						        print a
+						    count += 1
+
+						if args.message != '':
+						    print(args.message)
+
+						print(count)
+					</pre>
+				</article>
+			</div>
 		</div>
   </div>
   <footer>
 		<p>&copy; Oleg Mukhin 2012</p>
   </footer>
-	<div id="scroller">
-		test
-	</div>
   <script src="http://yandex.st/jquery/1.8.0/jquery.min.js"></script>
 	<script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
 	<script src="js/SyntaxHighlighter/shCore.js"></script>
@@ -343,17 +349,34 @@
 	  'python            js/SyntaxHighlighter/shBrushPython.js'
 	);
 	
-	SyntaxHighlighter.defaults['collapse'] = true;
-	SyntaxHighlighter.defaults['collapse'] = true;
-	
 	SyntaxHighlighter.all();
+	
+	var $window = $(window);
+	var $menu = $('#menu');
+	
+	$window.scroll(function() {
+		var $top = $(this).scrollTop();
+		if($top > 148) {
+	    $menu.css('margin-top', $top - 90 + "px");
+		} else {
+			$menu.css('margin-top', 58);
+		}
+	});
 	
 	$('#click').click(function() { $('.fact').justFacts('toggle'); });
 	$('.fact').justFacts(); //{classOnShow : 'testClass'}
 	
-	$('#scroller').click(function() {
-		$.scrollTo('.qa', 800);
-	});
+	function gracefulScroll(anchors) {
+		$(anchors).each(function(key, anchor) {
+			$('a[href$="#' + anchor + '"]').click(function(event) {
+				event.preventDefault();
+				//window.location.hash = anchor;
+				$.scrollTo('a[name="' + anchor + '"]', 800);
+			});
+		});
+	}
+	
+	gracefulScroll(['info', 'experience', 'programming']);
 	</script>
 </body>
 </html>
