@@ -1,1 +1,3 @@
 This is a website that will host the answers to the questions asked in the Yandex School of Interface Development application. It aims to use the latest interface technologies and techniques, in the hope that this will demonstrate a thorough understand of the subjects required to participate in the school program.
+
+I have created the linked just-facts jQuery plug-in for this project. The idea behind the plug-in, is to allow viewers of the page who may not have all the time in the world to read through the many lines of answers, to filter the text to see a very short summary of each answer using just factual content.
